@@ -27,19 +27,29 @@ class MainActivity : AppCompatActivity() {
 
         fun chPlayer() {
             if (player == "X"){
-                player = "0"
-                t1.text = "Player 1 moves (X)"
+                player = "O"
+                t1.text = getString(R.string.t4)
             } else {
                 player = "X"
-                t1.text = "Player 2 moves (0)"
+                t1.text = getString(R.string.t5)
             }
         }
 
         fun winner() {
             t2.visibility = View.VISIBLE
-            t2.text = "Winner player - $player"
+            t2.text = getString(R.string.t6, player)
             t1.visibility = View.INVISIBLE
             t3.visibility = View.VISIBLE
+            b1.setEnabled(false)
+            b2.setEnabled(false)
+            b3.setEnabled(false)
+            b4.setEnabled(false)
+            b5.setEnabled(false)
+            b6.setEnabled(false)
+            b7.setEnabled(false)
+            b8.setEnabled(false)
+            b9.setEnabled(false)
+
             t3.setOnClickListener{
                 b1.text = ""
                 b2.text = ""
@@ -53,8 +63,17 @@ class MainActivity : AppCompatActivity() {
                 player = "0"
                 t1.visibility = View.VISIBLE
                 t2.visibility = View.INVISIBLE
-                t1.text = "Player 1 starts the game (X)"
+                t1.text = getString(R.string.t1)
 
+                b1.setEnabled(true)
+                b2.setEnabled(true)
+                b3.setEnabled(true)
+                b4.setEnabled(true)
+                b5.setEnabled(true)
+                b6.setEnabled(true)
+                b7.setEnabled(true)
+                b8.setEnabled(true)
+                b9.setEnabled(true)
             }
         }
 
