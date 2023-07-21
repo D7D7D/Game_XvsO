@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Игра крестики-нолики</string>
+    <string name="t1">Игрок 1 начинает игру (Х)</string>
+    <string name="t2">Победитель</string>
+    <string name="t3">Сыграть еще раз</string>
+    <string name="t4">Сейчас ход игрока 1 (Х)</string>
+    <string name="t5">Сейчас ход игрока 2 (0)</string>
+    <string name="t6">Выйграл игрок: %1$s</string>
+
+</resources>

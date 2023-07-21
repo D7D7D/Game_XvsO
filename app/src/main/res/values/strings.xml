@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Game X-0 vol1.1</string>
+    <string name="t1">Player 1 starts the game (X)</string>
+    <string name="t2">Winner</string>
+    <string name="t3">Try again</string>
+    <string name="t4">Try Player 1 moves (X)</string>
+    <string name="t5">Try Player 2 moves (0)</string>
+    <string name="t6">Winner player: %1$s</string>
+
+
+
 </resources>
