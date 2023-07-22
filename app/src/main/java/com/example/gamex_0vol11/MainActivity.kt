@@ -74,7 +74,10 @@ class MainActivity : AppCompatActivity() {
                 b7.setEnabled(true)
                 b8.setEnabled(true)
                 b9.setEnabled(true)
+
+                t3.visibility = View.INVISIBLE
             }
+
         }
 
         b1.setOnClickListener {
