@@ -6,7 +6,7 @@
     <string name="t4">Сейчас ход игрока 1 (Х)</string>
     <string name="t5">Сейчас ход игрока 2 (0)</string>
     <string name="t6">Выйграл игрок: %1$s</string>
-    <string name="victories">побед: %1$s</string>
+    <string name="victories">побед: %1$d</string>
     <string name="player1">игрок Х</string>
     <string name="player2">игрок 0</string>
 
