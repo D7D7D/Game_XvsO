@@ -6,9 +6,10 @@
     <string name="t4">Try Player 1 moves (X)</string>
     <string name="t5">Try Player 2 moves (0)</string>
     <string name="t6">Winner player: %1$s</string>
-    <string name="victories">victories: %1$s</string>
+    <string name="victories">victories: %1$d</string>
     <string name="player1">player X</string>
     <string name="player2">player 0</string>
+
 
 
 

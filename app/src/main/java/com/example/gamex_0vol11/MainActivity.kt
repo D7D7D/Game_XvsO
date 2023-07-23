@@ -24,6 +24,15 @@ class MainActivity : AppCompatActivity() {
         val t1: TextView = findViewById(R.id.t1)
         val t2: TextView = findViewById(R.id.t2)
         val t3: TextView = findViewById(R.id.t3)
+        val tc12: TextView = findViewById(R.id.tc12)
+        val tc22: TextView = findViewById(R.id.tc22)
+
+        var winp1 = 0
+        var winp2 = 0
+        tc12.text = getString(R.string.victories, winp1)
+        tc22.text = getString(R.string.victories, winp2)
+
+
 
         fun chPlayer() {
             if (player == "X"){
@@ -38,6 +47,13 @@ class MainActivity : AppCompatActivity() {
         fun winner() {
             t2.visibility = View.VISIBLE
             t2.text = getString(R.string.t6, player)
+
+
+            if (player == "X") winp1++
+            else winp2++
+            tc12.text = getString(R.string.victories, winp1)
+            tc22.text = getString(R.string.victories, winp2)
+
             t1.visibility = View.INVISIBLE
             t3.visibility = View.VISIBLE
             b1.setEnabled(false)
