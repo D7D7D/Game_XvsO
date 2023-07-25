@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         val tc12: TextView = findViewById(R.id.tc12)
         val tc22: TextView = findViewById(R.id.tc22)
 
+        var countStep = 0
+
         var winPlayer1 = 0
         var winPlayer2 = 0
         tc12.text = getString(R.string.victories, winPlayer1)
@@ -112,16 +114,80 @@ class MainActivity : AppCompatActivity() {
                 b9.setEnabled(true)
 
                 t3.visibility = View.INVISIBLE
+
+                countStep = 0
             }
 
         }
+
+        fun valueDraw() {
+            countStep++
+            if (countStep == 9 && t2.visibility == View.INVISIBLE) {
+                t2.visibility = View.VISIBLE
+                t2.text = getString(R.string.valueDraw)
+
+                t1.visibility = View.INVISIBLE
+                t3.visibility = View.VISIBLE
+                b1.setEnabled(false)            //lock buttons
+                b2.setEnabled(false)
+                b3.setEnabled(false)
+                b4.setEnabled(false)
+                b5.setEnabled(false)
+                b6.setEnabled(false)
+                b7.setEnabled(false)
+                b8.setEnabled(false)
+                b9.setEnabled(false)
+
+                t3.setOnClickListener {      // button - try again
+                    b1.translationZ = 0.0f
+                    b2.translationZ = 0.0f
+                    b3.translationZ = 0.0f
+                    b4.translationZ = 0.0f
+                    b5.translationZ = 0.0f
+                    b6.translationZ = 0.0f
+                    b7.translationZ = 0.0f
+                    b8.translationZ = 0.0f
+                    b9.translationZ = 0.0f
+
+                    b1.background = getDrawable(R.mipmap.grass_foreground)
+                    b2.background = getDrawable(R.mipmap.grass_foreground)
+                    b3.background = getDrawable(R.mipmap.grass_foreground)
+                    b4.background = getDrawable(R.mipmap.grass_foreground)
+                    b5.background = getDrawable(R.mipmap.grass_foreground)
+                    b6.background = getDrawable(R.mipmap.grass_foreground)
+                    b7.background = getDrawable(R.mipmap.grass_foreground)
+                    b8.background = getDrawable(R.mipmap.grass_foreground)
+                    b9.background = getDrawable(R.mipmap.grass_foreground)
+
+                    xOr0 = 2.0f                          //  for Player 1 starts the game (X)
+                    t1.visibility = View.VISIBLE
+                    t2.visibility = View.INVISIBLE
+                    t1.text = getString(R.string.t1)
+
+                    b1.setEnabled(true)
+                    b2.setEnabled(true)
+                    b3.setEnabled(true)
+                    b4.setEnabled(true)
+                    b5.setEnabled(true)
+                    b6.setEnabled(true)
+                    b7.setEnabled(true)
+                    b8.setEnabled(true)
+                    b9.setEnabled(true)
+
+                    t3.visibility = View.INVISIBLE
+
+                    countStep = 0
+                }
+            }
+        }
+
 
         b1.setOnClickListener {
             if (b1.translationZ == emptyPlace) {        //if place is empty - allow move
                 chPlayer()
                 b1.translationZ = xOr0
 
-                if (b1.translationZ == 2.0f) b1.background = getDrawable(R.mipmap.tank_foreground)
+                if (xOr0 == 2.0f) b1.background = getDrawable(R.mipmap.tank_foreground)
                 else b1.background = getDrawable(R.mipmap.eg)
 
                 if (
@@ -131,6 +197,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b2.setOnClickListener {
@@ -147,23 +214,26 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b3.setOnClickListener {
             if (b3.translationZ == emptyPlace) {
                 chPlayer()
-            }
-            b3.translationZ = xOr0
 
-            if (b3.translationZ == 2.0f) b3.background = getDrawable(R.mipmap.tank_foreground)
-            else b3.background = getDrawable(R.mipmap.eg)
+                b3.translationZ = xOr0
 
-            if (
-                b3.translationZ == b2.translationZ && b3.translationZ == b1.translationZ ||
-                b3.translationZ == b6.translationZ && b3.translationZ == b9.translationZ ||
-                b3.translationZ == b5.translationZ && b3.translationZ == b7.translationZ
-            ) {
-                winner()
+                if (b3.translationZ == 2.0f) b3.background = getDrawable(R.mipmap.tank_foreground)
+                else b3.background = getDrawable(R.mipmap.eg)
+
+                if (
+                    b3.translationZ == b2.translationZ && b3.translationZ == b1.translationZ ||
+                    b3.translationZ == b6.translationZ && b3.translationZ == b9.translationZ ||
+                    b3.translationZ == b5.translationZ && b3.translationZ == b7.translationZ
+                ) {
+                    winner()
+                }
+                valueDraw()
             }
         }
         b4.setOnClickListener {
@@ -180,6 +250,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b5.setOnClickListener {
@@ -198,6 +269,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b6.setOnClickListener {
@@ -214,6 +286,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b7.setOnClickListener {
@@ -231,6 +304,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b8.setOnClickListener {
@@ -246,6 +320,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
         b9.setOnClickListener {
@@ -263,6 +338,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     winner()
                 }
+                valueDraw()
             }
         }
     }

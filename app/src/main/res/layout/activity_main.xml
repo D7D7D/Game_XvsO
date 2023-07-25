@@ -45,7 +45,8 @@
                 android:hint="@string/player1"
                 android:inputType="textPersonName"
                 android:singleLine="true"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                />
 
             <TextView
                 android:id="@+id/tc12"
