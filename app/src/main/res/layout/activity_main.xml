@@ -30,11 +30,10 @@
                 android:id="@+id/im1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 app:srcCompat="@mipmap/eg"
+                tools:srcCompat="@tools:sample/avatars"
 
-
-                tools:srcCompat="@tools:sample/avatars" />
+                />
 
             <EditText
                 android:id="@+id/tc11"
@@ -45,7 +44,9 @@
                 android:hint="@string/player1"
                 android:inputType="textPersonName"
                 android:singleLine="true"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+
+                />
 
             <TextView
                 android:id="@+id/tc12"
@@ -53,7 +54,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/victories"
-
 
                 />
 
@@ -75,7 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <ImageView
                 android:id="@+id/im2"
@@ -95,7 +96,8 @@
                 android:hint="@string/player2"
                 android:inputType="textPersonName"
                 android:singleLine="true"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                />
 
 
             <TextView
