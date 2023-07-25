@@ -38,8 +38,6 @@ class MainActivity : AppCompatActivity() {
         tc12.text = getString(R.string.victories, winPlayer1)
         tc22.text = getString(R.string.victories, winPlayer2)
 
-
-
         fun chPlayer() {
             if (xOr0 == 2.0f){         //X - 1, 0 - 2
                 xOr0 = 1.0f
