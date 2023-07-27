@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +40,9 @@ class MainActivity : AppCompatActivity() {
         tc12.text = getString(R.string.victories, winPlayer1)
         tc22.text = getString(R.string.victories, winPlayer2)
 
+
         fun chPlayer() {
-            if (xOr0 == 2.0f){         //X - 1, 0 - 2
+            if (xOr0 == 2.0f){         // X - 1, 0 - 2
                 xOr0 = 1.0f
                 t1.text = getString(R.string.t4)
             } else {
@@ -120,13 +123,32 @@ class MainActivity : AppCompatActivity() {
 
         fun valueDraw() {
             countStep++
-            if (countStep == 9 && t2.visibility == View.INVISIBLE) {
+            if (countStep == 9 && t2.visibility == View.INVISIBLE) {        // checking for a draw
+
+                val aDialogBuilder = AlertDialog.Builder(this@MainActivity)
+                aDialogBuilder.setTitle(getString(R.string.valueDraw))
+                aDialogBuilder.setMessage(getString(R.string.fightAgain))
+                aDialogBuilder.setPositiveButton(getString(R.string.ok)) { dialog, which ->
+                    t3.callOnClick()
+                    Toast.makeText(applicationContext, getString(R.string.ok), Toast.LENGTH_SHORT).show()
+                }
+                aDialogBuilder.setNegativeButton(getString(R.string.no)){
+                    dialog, which -> Toast.makeText(applicationContext, getString(R.string.no), Toast.LENGTH_SHORT).show()
+                }
+                aDialogBuilder.setNeutralButton(getString(R.string.cancel)){
+                    _,_ -> Toast.makeText(applicationContext, (R.string.cancel), Toast.LENGTH_SHORT).show()
+                }
+
+                val dialog1: AlertDialog = aDialogBuilder.create()
+                dialog1.show()
+
+
                 t2.visibility = View.VISIBLE
                 t2.text = getString(R.string.valueDraw)
 
                 t1.visibility = View.INVISIBLE
                 t3.visibility = View.VISIBLE
-                b1.setEnabled(false)            //lock buttons
+                b1.setEnabled(false)            // lock buttons
                 b2.setEnabled(false)
                 b3.setEnabled(false)
                 b4.setEnabled(false)
@@ -181,7 +203,7 @@ class MainActivity : AppCompatActivity() {
 
 
         b1.setOnClickListener {
-            if (b1.translationZ == emptyPlace) {        //if place is empty - allow move
+            if (b1.translationZ == emptyPlace) {        // if place is empty - allow move
                 chPlayer()
                 b1.translationZ = xOr0
 
