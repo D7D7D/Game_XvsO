@@ -10,6 +10,10 @@
     <string name="player1">player X</string>
     <string name="player2">player 0</string>
     <string name="valueDraw">Oops, no one won, draw</string>
+    <string name="fightAgain">Need to fight again</string>
+    <string name="ok">"Ok"</string>
+    <string name="no">"No"</string>
+    <string name="cancel">"Cancel"</string>
 
 
 
