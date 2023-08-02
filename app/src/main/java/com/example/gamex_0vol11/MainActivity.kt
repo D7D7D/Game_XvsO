@@ -115,7 +115,6 @@ class MainActivity : AppCompatActivity() {
 
                 countStep = 0
             }
-
         }
 
         fun valueDraw() {
@@ -179,14 +178,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         b1.setOnClickListener {
             if (b1.translationZ == emptyPlace) {        //if place is empty - allow move
                 chPlayer()
                 b1.translationZ = xOr0
 
-                if (xOr0 == 2.0f) b1.background = getDrawable(R.mipmap.tank_foreground)
-                else b1.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b1.background = getDrawable(R.mipmap.tank7_foreground)
+                else b1.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b1.translationZ == b2.translationZ && b1.translationZ == b3.translationZ ||
@@ -203,8 +201,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b2.translationZ = xOr0
 
-                if (b2.translationZ == 2.0f) b2.background = getDrawable(R.mipmap.tank_foreground)
-                else b2.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b2.background = getDrawable(R.mipmap.tank7_foreground)
+                else b2.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b2.translationZ == b3.translationZ && b2.translationZ == b1.translationZ ||
@@ -221,8 +219,8 @@ class MainActivity : AppCompatActivity() {
 
                 b3.translationZ = xOr0
 
-                if (b3.translationZ == 2.0f) b3.background = getDrawable(R.mipmap.tank_foreground)
-                else b3.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b3.background = getDrawable(R.mipmap.tank7_foreground)
+                else b3.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b3.translationZ == b2.translationZ && b3.translationZ == b1.translationZ ||
@@ -239,8 +237,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b4.translationZ = xOr0
 
-                if (b4.translationZ == 2.0f) b4.background = getDrawable(R.mipmap.tank_foreground)
-                else b4.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b4.background = getDrawable(R.mipmap.tank7_foreground)
+                else b4.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b4.translationZ == b5.translationZ && b4.translationZ == b6.translationZ ||
@@ -256,8 +254,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b5.translationZ = xOr0
 
-                if (b5.translationZ == 2.0f) b5.background = getDrawable(R.mipmap.tank_foreground)
-                else b5.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b5.background = getDrawable(R.mipmap.tank7_foreground)
+                else b5.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b5.translationZ == b4.translationZ && b5.translationZ == b6.translationZ ||
@@ -275,8 +273,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b6.translationZ = xOr0
 
-                if (b6.translationZ == 2.0f) b6.background = getDrawable(R.mipmap.tank_foreground)
-                else b6.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b6.background = getDrawable(R.mipmap.tank7_foreground)
+                else b6.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b6.translationZ == b5.translationZ && b6.translationZ == b4.translationZ ||
@@ -292,8 +290,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b7.translationZ = xOr0
 
-                if (b7.translationZ == 2.0f) b7.background = getDrawable(R.mipmap.tank_foreground)
-                else b7.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b7.background = getDrawable(R.mipmap.tank7_foreground)
+                else b7.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b7.translationZ == b4.translationZ && b7.translationZ == b1.translationZ ||
@@ -310,8 +308,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b8.translationZ = xOr0
 
-                if (b8.translationZ == 2.0f) b8.background = getDrawable(R.mipmap.tank_foreground)
-                else b8.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b8.background = getDrawable(R.mipmap.tank7_foreground)
+                else b8.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (b8.translationZ == b7.translationZ && b8.translationZ == b9.translationZ ||
                     b8.translationZ == b5.translationZ && b8.translationZ == b2.translationZ
@@ -326,8 +324,8 @@ class MainActivity : AppCompatActivity() {
                 chPlayer()
                 b9.translationZ = xOr0
 
-                if (b9.translationZ == 2.0f) b9.background = getDrawable(R.mipmap.tank_foreground)
-                else b9.background = getDrawable(R.mipmap.eg)
+                if (xOr0 == 2.0f) b9.background = getDrawable(R.mipmap.tank7_foreground)
+                else b9.background = getDrawable(R.mipmap.eg5_foreground)
 
                 if (
                     b9.translationZ == b8.translationZ && b9.translationZ == b7.translationZ ||

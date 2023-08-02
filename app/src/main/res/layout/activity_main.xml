@@ -26,14 +26,26 @@
 
             >
 
-            <ImageView
-                android:id="@+id/im1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/eg"
-                tools:srcCompat="@tools:sample/avatars"
 
-                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                style="@style/MyCardViewStyle"
+                android:layout_margin="5dp"
+                >
+
+                <ImageView
+                    android:id="@+id/im1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/eg5_foreground"
+                    android:scaleType="fitXY"
+
+
+                    />
+
+            </androidx.cardview.widget.CardView>
 
             <EditText
                 android:id="@+id/tc11"
@@ -78,14 +90,31 @@
             android:orientation="vertical"
             >
 
-            <ImageView
-                android:id="@+id/im2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/tank_foreground"
-                tools:srcCompat="@tools:sample/avatars"
 
-                />
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                style="@style/MyCardViewStyle"
+                android:layout_margin="5dp"
+                >
+
+                <ImageView
+                    android:id="@+id/im2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/tank2_foreground"
+
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
 
             <EditText
                 android:id="@+id/tc21"
@@ -137,115 +166,202 @@
 
         />
 
-    <ImageView
-        android:id="@+id/b1"
+
+
+
+
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv1"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
-        android:background="@mipmap/grass_foreground"
-        app:layout_constraintEnd_toStartOf="@+id/b2"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/MyCardViewStyle"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/t1"
-
-        />
-
-    <ImageView
-        android:id="@+id/b2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        android:layout_marginStart="4dp"
-        app:layout_constraintTop_toTopOf="@+id/b1"
-        app:layout_constraintEnd_toStartOf="@+id/b3"
-        app:layout_constraintStart_toEndOf="@+id/b1"
-
-
-        />
-
-    <ImageView
-        android:id="@+id/b3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        android:layout_marginStart="4dp"
-        app:layout_constraintTop_toTopOf="@+id/b1"
-        app:layout_constraintStart_toEndOf="@+id/b2"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        />
-
-    <ImageView
-        android:id="@+id/b4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        app:layout_constraintTop_toBottomOf="@+id/b1"
+        app:layout_constraintEnd_toStartOf="@+id/cv2"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@+id/b5"
         app:layout_constraintStart_toStartOf="parent"
+        >
 
-        />
+        <ImageView
+            android:id="@+id/b1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/grass5_foreground"
+            />
 
-    <ImageView
-        android:id="@+id/b5"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv2"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        android:layout_marginStart="4dp"
-        app:layout_constraintTop_toTopOf="@+id/b4"
-        app:layout_constraintEnd_toStartOf="@+id/b6"
-        app:layout_constraintStart_toEndOf="@+id/b4"
+        style="@style/MyCardViewStyle"
 
-        />
+        android:layout_marginStart="6dp"
+        app:layout_constraintTop_toTopOf="@+id/cv1"
+        app:layout_constraintEnd_toStartOf="@+id/cv3"
+        app:layout_constraintStart_toEndOf="@+id/cv1"
+        >
 
-    <ImageView
-        android:id="@+id/b6"
+        <ImageView
+            android:id="@+id/b2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv3"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        android:layout_marginStart="4dp"
-        app:layout_constraintStart_toEndOf="@+id/b5"
-        app:layout_constraintTop_toTopOf="@+id/b5"
+        style="@style/MyCardViewStyle"
+
+        android:layout_marginStart="6dp"
+        app:layout_constraintTop_toTopOf="@+id/cv1"
+        app:layout_constraintStart_toEndOf="@+id/cv2"
         app:layout_constraintEnd_toEndOf="parent"
+        >
 
-        />
+        <ImageView
+            android:id="@+id/b3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
 
-    <ImageView
-        android:id="@+id/b7"
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv4"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
+        style="@style/MyCardViewStyle"
+        android:layout_marginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/cv1"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@+id/b8"
+        app:layout_constraintEnd_toStartOf="@+id/cv5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b4"
+        >
 
-        />
+        <ImageView
+            android:id="@+id/b4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
 
-    <ImageView
-        android:id="@+id/b8"
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv5"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@mipmap/grass_foreground"
-        android:layout_marginStart="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/b9"
-        app:layout_constraintStart_toEndOf="@+id/b7"
-        app:layout_constraintTop_toTopOf="@+id/b7"
+        style="@style/MyCardViewStyle"
+        android:layout_marginStart="6dp"
 
-        />
+        app:layout_constraintTop_toTopOf="@+id/cv4"
+        app:layout_constraintEnd_toStartOf="@+id/cv6"
+        app:layout_constraintStart_toEndOf="@+id/cv4"
+        >
 
-    <ImageView
-        android:id="@+id/b9"
+        <ImageView
+            android:id="@+id/b5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv6"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="4dp"
-        android:background="@mipmap/grass_foreground"
+        style="@style/MyCardViewStyle"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/cv5"
+        app:layout_constraintTop_toTopOf="@+id/cv5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/b8"
-        app:layout_constraintTop_toTopOf="@+id/b8"
+        >
 
-        />
+        <ImageView
+            android:id="@+id/b6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv7"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        style="@style/MyCardViewStyle"
+        android:layout_marginTop="6dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/cv8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv4"
+        >
+
+        <ImageView
+            android:id="@+id/b7"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        style="@style/MyCardViewStyle"
+        android:layout_marginStart="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/cv9"
+        app:layout_constraintStart_toEndOf="@+id/cv7"
+        app:layout_constraintTop_toTopOf="@+id/cv7"
+        >
+
+        <ImageView
+            android:id="@+id/b8"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        style="@style/MyCardViewStyle"
+        android:layout_marginStart="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cv8"
+        app:layout_constraintTop_toTopOf="@+id/cv8"
+        >
+
+        <ImageView
+            android:id="@+id/b9"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/grass5_foreground"
+            />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/t2"
@@ -257,7 +373,7 @@
         app:layout_constraintBottom_toTopOf="@id/t3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b7"
+        app:layout_constraintTop_toBottomOf="@+id/cv7"
 
         />
 
