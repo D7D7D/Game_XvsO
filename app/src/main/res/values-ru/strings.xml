@@ -10,6 +10,10 @@
     <string name="player1">игрок Х</string>
     <string name="player2">игрок 0</string>
     <string name="valueDraw">Упс, ничья</string>
+    <string name="fightAgain">Нужно сразиться снова</string>
+    <string name="ok">"Окей"</string>
+    <string name="no">"Нет"</string>
+    <string name="cancel">"Отмена"</string>
 
 
 </resources>
