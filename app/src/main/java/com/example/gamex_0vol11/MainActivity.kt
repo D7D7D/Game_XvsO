@@ -2,7 +2,9 @@ package com.example.gamex_0vol11
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         val tc12: TextView = findViewById(R.id.tc12)
         val tc22: TextView = findViewById(R.id.tc22)
 
+        val tc11 = findViewById<EditText>(R.id.tc11)
+        val tc21 = findViewById<EditText>(R.id.tc21)
+
+
+
         var countStep = 0
 
         var winPlayer1 = 0
@@ -52,9 +59,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun winner() {
+            Log.d("ZBN","$tc11")
             t2.visibility = View.VISIBLE
-            val winner = if (xOr0 == 1.0f) getString(R.string.player1)
-            else getString(R.string.player2)
+            val winner = if (xOr0 == 1.0f) tc11.text.toString()
+            else tc21.text.toString()
 
             t2.text = getString(R.string.t6, winner)
 
@@ -87,15 +95,15 @@ class MainActivity : AppCompatActivity() {
                 b8.translationZ = 0.0f
                 b9.translationZ = 0.0f
 
-                b1.background = getDrawable(R.mipmap.grass_foreground)
-                b2.background = getDrawable(R.mipmap.grass_foreground)
-                b3.background = getDrawable(R.mipmap.grass_foreground)
-                b4.background = getDrawable(R.mipmap.grass_foreground)
-                b5.background = getDrawable(R.mipmap.grass_foreground)
-                b6.background = getDrawable(R.mipmap.grass_foreground)
-                b7.background = getDrawable(R.mipmap.grass_foreground)
-                b8.background = getDrawable(R.mipmap.grass_foreground)
-                b9.background = getDrawable(R.mipmap.grass_foreground)
+                b1.background = getDrawable(R.drawable.grass)
+                b2.background = getDrawable(R.drawable.grass)
+                b3.background = getDrawable(R.drawable.grass)
+                b4.background = getDrawable(R.drawable.grass)
+                b5.background = getDrawable(R.drawable.grass)
+                b6.background = getDrawable(R.drawable.grass)
+                b7.background = getDrawable(R.drawable.grass)
+                b8.background = getDrawable(R.drawable.grass)
+                b9.background = getDrawable(R.drawable.grass)
 
 
 
@@ -168,15 +176,15 @@ class MainActivity : AppCompatActivity() {
                     b8.translationZ = 0.0f
                     b9.translationZ = 0.0f
 
-                    b1.background = getDrawable(R.mipmap.grass_foreground)
-                    b2.background = getDrawable(R.mipmap.grass_foreground)
-                    b3.background = getDrawable(R.mipmap.grass_foreground)
-                    b4.background = getDrawable(R.mipmap.grass_foreground)
-                    b5.background = getDrawable(R.mipmap.grass_foreground)
-                    b6.background = getDrawable(R.mipmap.grass_foreground)
-                    b7.background = getDrawable(R.mipmap.grass_foreground)
-                    b8.background = getDrawable(R.mipmap.grass_foreground)
-                    b9.background = getDrawable(R.mipmap.grass_foreground)
+                    b1.background = getDrawable(R.drawable.grass)
+                    b2.background = getDrawable(R.drawable.grass)
+                    b3.background = getDrawable(R.drawable.grass)
+                    b4.background = getDrawable(R.drawable.grass)
+                    b5.background = getDrawable(R.drawable.grass)
+                    b6.background = getDrawable(R.drawable.grass)
+                    b7.background = getDrawable(R.drawable.grass)
+                    b8.background = getDrawable(R.drawable.grass)
+                    b9.background = getDrawable(R.drawable.grass)
 
                     xOr0 = 2.0f                          //  for Player 1 starts the game (X)
                     t1.visibility = View.VISIBLE
