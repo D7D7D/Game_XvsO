@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:weightSum="2"
@@ -20,10 +20,10 @@
         <LinearLayout
             android:id="@+id/card1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@mipmap/bumaga_foreground"
+            android:background="@drawable/bumaga"
             >
 
 
@@ -39,7 +39,7 @@
                     android:id="@+id/im1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/eg5_foreground"
+                    app:srcCompat="@drawable/avatar_cat"
                     android:scaleType="fitXY"
 
 
@@ -84,11 +84,11 @@
         <LinearLayout
             android:id="@+id/card2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="end"
             android:orientation="vertical"
-            android:background="@mipmap/bumaga"
+            android:background="@drawable/bumaga"
             >
 
 
@@ -103,19 +103,11 @@
                     android:id="@+id/im2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/tank2_foreground"
+                    app:srcCompat="@drawable/avatar_rocket"
 
                     />
 
             </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
 
             <EditText
                 android:id="@+id/tc21"
@@ -155,6 +147,16 @@
 
     </LinearLayout>
 
+<!--
+
+
+
+    Заканчивается лаяут с карточками игроков
+
+
+
+-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/battleground"
         android:layout_width="match_parent"
@@ -166,11 +168,10 @@
         >
 
         <ImageView
-            android:layout_width="630dp"
-            android:layout_height="420dp"
-            android:src="@mipmap/polya_foreground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/polya"
             android:scaleType="centerCrop"
-
 
             />
 
@@ -178,7 +179,7 @@
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="20dp"
         android:text="@string/t1"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -203,7 +204,7 @@
             android:id="@+id/b1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -224,7 +225,7 @@
             android:id="@+id/b2"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -246,7 +247,7 @@
             android:id="@+id/b3"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -268,7 +269,7 @@
             android:id="@+id/b4"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -289,7 +290,7 @@
             android:id="@+id/b5"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -309,7 +310,7 @@
             android:id="@+id/b6"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -330,7 +331,7 @@
             android:id="@+id/b7"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -350,7 +351,7 @@
             android:id="@+id/b8"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView>
@@ -370,7 +371,7 @@
             android:id="@+id/b9"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/grass5_foreground"
+            android:background="@drawable/grass"
             />
 
     </androidx.cardview.widget.CardView> 
