@@ -147,16 +147,15 @@
 
     </LinearLayout>
 
+<!--
 
 
 
+    Заканчивается лаяут с карточками игроков
 
 
 
-
-
-
-
+-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/battleground"
