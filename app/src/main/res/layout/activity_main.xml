@@ -57,7 +57,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textSize="14sp"
-
+                android:text="@string/player1"
                 />
 
             <TextView
@@ -119,6 +119,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textSize="14sp"
+                android:text="@string/player2"
                 />
 
 

@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Game X-0 vol1.1</string>
-    <string name="t1">Player 1 (X) starts the game</string>
+    <string name="t1">%1$s starts the game </string>
     <string name="t2">Winner</string>
     <string name="t3">Try again</string>
     <string name="t4">Try Player 1 moves (X)</string>
     <string name="t5">Try Player 2 moves (0)</string>
     <string name="t6">Winner: %1$s</string>
     <string name="victories">victories: %1$d</string>
-    <string name="player1">player X</string>
-    <string name="player2">player 0</string>
+    <string name="player1">Player X</string>
+    <string name="player2">Player 0</string>
     <string name="valueDraw">Oops, no one won, draw</string>
     <string name="fightAgain">Need to fight again</string>
     <string name="ok">"Ok"</string>
