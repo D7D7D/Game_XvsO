@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         val tc21 = findViewById<EditText>(R.id.tc21)
 
 
-
         var countStep = 0
 
         var winPlayer1 = 0
@@ -49,28 +48,27 @@ class MainActivity : AppCompatActivity() {
 
 
         fun chPlayer() {
-            if (xOr0 == 2.0f){         // X - 1, 0 - 2
+            if (xOr0 == 2.0f) {         // X - 1.0 = anti-tank hedgehog, 0 - 2.0 = tank
                 xOr0 = 1.0f
-                t1.text = getString(R.string.t4)
+                t1.text = getString(R.string.t5)
             } else {
                 xOr0 = 2.0f
-                t1.text = getString(R.string.t5)
+                t1.text = getString(R.string.t4)
             }
         }
 
         fun winner() {
-            Log.d("ZBN","$tc11")
             t2.visibility = View.VISIBLE
             val winner = if (xOr0 == 1.0f) tc11.text.toString()
             else tc21.text.toString()
-
             t2.text = getString(R.string.t6, winner)
 
-
+            //win counter
             if (xOr0 == 1.0f) winPlayer1++
             else winPlayer2++
             tc12.text = getString(R.string.victories, winPlayer1)
             tc22.text = getString(R.string.victories, winPlayer2)
+            //win counter
 
             t1.visibility = View.INVISIBLE
             t3.visibility = View.VISIBLE
@@ -84,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             b8.setEnabled(false)
             b9.setEnabled(false)
 
-            t3.setOnClickListener{      // button - try again
+            t3.setOnClickListener {      // button - try again
                 b1.translationZ = 0.0f
                 b2.translationZ = 0.0f
                 b3.translationZ = 0.0f
@@ -105,12 +103,12 @@ class MainActivity : AppCompatActivity() {
                 b8.background = getDrawable(R.drawable.grass)
                 b9.background = getDrawable(R.drawable.grass)
 
-
-
-                xOr0 = 2.0f                          //  for Player 1 starts the game (X)
+                //xOr0 = 2.0f                          //  for Player 1 starts the game (X)
                 t1.visibility = View.VISIBLE
                 t2.visibility = View.INVISIBLE
-                t1.text = getString(R.string.t1)
+
+                val startPlayer = if (xOr0 == 1.0f) tc21.text else tc11.text
+                t1.text = getString(R.string.t1, startPlayer)
 
                 b1.setEnabled(true)
                 b2.setEnabled(true)
@@ -126,9 +124,10 @@ class MainActivity : AppCompatActivity() {
 
                 countStep = 0
             }
+            Log.d("ZBN", "fun winner END $xOr0")
         }
 
-        fun valueDraw() {
+        fun valueDraw() {  // checking for a draw
             countStep++
             if (countStep == 9 && t2.visibility == View.INVISIBLE) {        // checking for a draw
 
@@ -137,13 +136,15 @@ class MainActivity : AppCompatActivity() {
                 aDialogBuilder.setMessage(getString(R.string.fightAgain))
                 aDialogBuilder.setPositiveButton(getString(R.string.ok)) { dialog, which ->
                     t3.callOnClick()
-                    Toast.makeText(applicationContext, getString(R.string.ok), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.ok), Toast.LENGTH_SHORT)
+                        .show()
                 }
-                aDialogBuilder.setNegativeButton(getString(R.string.no)){
-                    dialog, which -> Toast.makeText(applicationContext, getString(R.string.no), Toast.LENGTH_SHORT).show()
+                aDialogBuilder.setNegativeButton(getString(R.string.no)) { dialog, which ->
+                    Toast.makeText(applicationContext, getString(R.string.no), Toast.LENGTH_SHORT)
+                        .show()
                 }
-                aDialogBuilder.setNeutralButton(getString(R.string.cancel)){
-                    _,_ -> Toast.makeText(applicationContext, (R.string.cancel), Toast.LENGTH_SHORT).show()
+                aDialogBuilder.setNeutralButton(getString(R.string.cancel)) { _, _ ->
+                    Toast.makeText(applicationContext, (R.string.cancel), Toast.LENGTH_SHORT).show()
                 }
 
                 val dialog1: AlertDialog = aDialogBuilder.create()
@@ -186,10 +187,13 @@ class MainActivity : AppCompatActivity() {
                     b8.background = getDrawable(R.drawable.grass)
                     b9.background = getDrawable(R.drawable.grass)
 
-                    xOr0 = 2.0f                          //  for Player 1 starts the game (X)
+
+                    //xOr0 = 2.0f                          //  for Player 1 starts the game (X)
                     t1.visibility = View.VISIBLE
                     t2.visibility = View.INVISIBLE
-                    t1.text = getString(R.string.t1)
+
+                    val startPlayer = if (xOr0 == 1.0f) tc11.text else tc21.text
+                    t1.text = getString(R.string.t1, startPlayer)
 
                     b1.setEnabled(true)
                     b2.setEnabled(true)
@@ -216,16 +220,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b1.background = getDrawable(R.mipmap.tank7_foreground)
                 else b1.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b1.translationZ == b2.translationZ && b1.translationZ == b3.translationZ ||
-                    b1.translationZ == b4.translationZ && b1.translationZ == b7.translationZ ||
-                    b1.translationZ == b5.translationZ && b1.translationZ == b9.translationZ
-                ) {
+                if (b1.translationZ == b2.translationZ && b1.translationZ == b3.translationZ || b1.translationZ == b4.translationZ && b1.translationZ == b7.translationZ || b1.translationZ == b5.translationZ && b1.translationZ == b9.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b2.setOnClickListener {
             if (b2.translationZ == emptyPlace) {
                 chPlayer()
@@ -234,15 +235,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b2.background = getDrawable(R.mipmap.tank7_foreground)
                 else b2.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b2.translationZ == b3.translationZ && b2.translationZ == b1.translationZ ||
-                    b2.translationZ == b5.translationZ && b2.translationZ == b8.translationZ
-                ) {
+                if (b2.translationZ == b3.translationZ && b2.translationZ == b1.translationZ || b2.translationZ == b5.translationZ && b2.translationZ == b8.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b3.setOnClickListener {
             if (b3.translationZ == emptyPlace) {
                 chPlayer()
@@ -252,16 +251,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b3.background = getDrawable(R.mipmap.tank7_foreground)
                 else b3.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b3.translationZ == b2.translationZ && b3.translationZ == b1.translationZ ||
-                    b3.translationZ == b6.translationZ && b3.translationZ == b9.translationZ ||
-                    b3.translationZ == b5.translationZ && b3.translationZ == b7.translationZ
-                ) {
+                if (b3.translationZ == b2.translationZ && b3.translationZ == b1.translationZ || b3.translationZ == b6.translationZ && b3.translationZ == b9.translationZ || b3.translationZ == b5.translationZ && b3.translationZ == b7.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b4.setOnClickListener {
             if (b4.translationZ == emptyPlace) {
                 chPlayer()
@@ -270,15 +266,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b4.background = getDrawable(R.mipmap.tank7_foreground)
                 else b4.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b4.translationZ == b5.translationZ && b4.translationZ == b6.translationZ ||
-                    b4.translationZ == b1.translationZ && b4.translationZ == b7.translationZ
-                ) {
+                if (b4.translationZ == b5.translationZ && b4.translationZ == b6.translationZ || b4.translationZ == b1.translationZ && b4.translationZ == b7.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b5.setOnClickListener {
             if (b5.translationZ == emptyPlace) {
                 chPlayer()
@@ -287,17 +281,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b5.background = getDrawable(R.mipmap.tank7_foreground)
                 else b5.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b5.translationZ == b4.translationZ && b5.translationZ == b6.translationZ ||
-                    b5.translationZ == b2.translationZ && b5.translationZ == b8.translationZ ||
-                    b5.translationZ == b1.translationZ && b5.translationZ == b9.translationZ ||
-                    b5.translationZ == b7.translationZ && b5.translationZ == b3.translationZ
-                ) {
+                if (b5.translationZ == b4.translationZ && b5.translationZ == b6.translationZ || b5.translationZ == b2.translationZ && b5.translationZ == b8.translationZ || b5.translationZ == b1.translationZ && b5.translationZ == b9.translationZ || b5.translationZ == b7.translationZ && b5.translationZ == b3.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b6.setOnClickListener {
             if (b6.translationZ == emptyPlace) {
                 chPlayer()
@@ -306,15 +296,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b6.background = getDrawable(R.mipmap.tank7_foreground)
                 else b6.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b6.translationZ == b5.translationZ && b6.translationZ == b4.translationZ ||
-                    b6.translationZ == b3.translationZ && b6.translationZ == b9.translationZ
-                ) {
+                if (b6.translationZ == b5.translationZ && b6.translationZ == b4.translationZ || b6.translationZ == b3.translationZ && b6.translationZ == b9.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b7.setOnClickListener {
             if (b7.translationZ == emptyPlace) {
                 chPlayer()
@@ -323,16 +311,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b7.background = getDrawable(R.mipmap.tank7_foreground)
                 else b7.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b7.translationZ == b4.translationZ && b7.translationZ == b1.translationZ ||
-                    b7.translationZ == b8.translationZ && b7.translationZ == b9.translationZ ||
-                    b7.translationZ == b5.translationZ && b7.translationZ == b3.translationZ
-                ) {
+                if (b7.translationZ == b4.translationZ && b7.translationZ == b1.translationZ || b7.translationZ == b8.translationZ && b7.translationZ == b9.translationZ || b7.translationZ == b5.translationZ && b7.translationZ == b3.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b8.setOnClickListener {
             if (b8.translationZ == emptyPlace) {
                 chPlayer()
@@ -341,14 +326,13 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b8.background = getDrawable(R.mipmap.tank7_foreground)
                 else b8.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (b8.translationZ == b7.translationZ && b8.translationZ == b9.translationZ ||
-                    b8.translationZ == b5.translationZ && b8.translationZ == b2.translationZ
-                ) {
+                if (b8.translationZ == b7.translationZ && b8.translationZ == b9.translationZ || b8.translationZ == b5.translationZ && b8.translationZ == b2.translationZ) {
                     winner()
                 }
                 valueDraw()
             }
         }
+
         b9.setOnClickListener {
             if (b9.translationZ == emptyPlace) {
                 chPlayer()
@@ -357,11 +341,7 @@ class MainActivity : AppCompatActivity() {
                 if (xOr0 == 2.0f) b9.background = getDrawable(R.mipmap.tank7_foreground)
                 else b9.background = getDrawable(R.mipmap.eg5_foreground)
 
-                if (
-                    b9.translationZ == b8.translationZ && b9.translationZ == b7.translationZ ||
-                    b9.translationZ == b6.translationZ && b9.translationZ == b3.translationZ ||
-                    b9.translationZ == b5.translationZ && b9.translationZ == b1.translationZ
-                ) {
+                if (b9.translationZ == b8.translationZ && b9.translationZ == b7.translationZ || b9.translationZ == b6.translationZ && b9.translationZ == b3.translationZ || b9.translationZ == b5.translationZ && b9.translationZ == b1.translationZ) {
                     winner()
                 }
                 valueDraw()

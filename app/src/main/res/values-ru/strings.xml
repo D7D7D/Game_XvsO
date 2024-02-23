@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Игра крестики-нолики</string>
-    <string name="t1">Игрок 1 (X) начинает игру</string>
+    <string name="t1">%1$s начинает игру</string>
     <string name="t2">Победитель</string>
     <string name="t3">Играть еще раз</string>
     <string name="t4">Сейчас ход игрока 1 (Х)</string>
     <string name="t5">Сейчас ход игрока 2 (0)</string>
     <string name="t6">Выйграл: %1$s</string>
     <string name="victories">побед: %1$d</string>
-    <string name="player1">игрок Х</string>
-    <string name="player2">игрок 0</string>
+    <string name="player1">Игрок X</string>
+    <string name="player2">Игрок 0</string>
     <string name="valueDraw">Упс, ничья</string>
     <string name="fightAgain">Нужно сразиться снова</string>
     <string name="ok">"Окей"</string>
