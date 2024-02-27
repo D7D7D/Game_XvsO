@@ -1,5 +1,6 @@
 package com.example.gamex_0vol11
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +57,13 @@ class MainActivity : AppCompatActivity() {
                 xOr0 = 2.0f
                 t1.text = getString(R.string.t4)
             }
+        }
+
+        fun soundMy() {
+        val soundRes = if(xOr0 == 1.0f) R.raw.eg else R.raw.tank
+            var mPlayer: MediaPlayer? = null
+            mPlayer = MediaPlayer.create(this, soundRes)
+            mPlayer!!.start()
         }
 
         fun winner() {
@@ -215,6 +224,7 @@ class MainActivity : AppCompatActivity() {
         b1.setOnClickListener {
             if (b1.translationZ == emptyPlace) {        // if place is empty - allow move
                 chPlayer()
+                soundMy()
                 b1.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b1.background = getDrawable(R.mipmap.tank7_foreground)
@@ -230,6 +240,7 @@ class MainActivity : AppCompatActivity() {
         b2.setOnClickListener {
             if (b2.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b2.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b2.background = getDrawable(R.mipmap.tank7_foreground)
@@ -245,7 +256,7 @@ class MainActivity : AppCompatActivity() {
         b3.setOnClickListener {
             if (b3.translationZ == emptyPlace) {
                 chPlayer()
-
+                soundMy()
                 b3.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b3.background = getDrawable(R.mipmap.tank7_foreground)
@@ -261,6 +272,7 @@ class MainActivity : AppCompatActivity() {
         b4.setOnClickListener {
             if (b4.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b4.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b4.background = getDrawable(R.mipmap.tank7_foreground)
@@ -276,6 +288,7 @@ class MainActivity : AppCompatActivity() {
         b5.setOnClickListener {
             if (b5.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b5.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b5.background = getDrawable(R.mipmap.tank7_foreground)
@@ -291,6 +304,7 @@ class MainActivity : AppCompatActivity() {
         b6.setOnClickListener {
             if (b6.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b6.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b6.background = getDrawable(R.mipmap.tank7_foreground)
@@ -306,6 +320,7 @@ class MainActivity : AppCompatActivity() {
         b7.setOnClickListener {
             if (b7.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b7.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b7.background = getDrawable(R.mipmap.tank7_foreground)
@@ -321,6 +336,7 @@ class MainActivity : AppCompatActivity() {
         b8.setOnClickListener {
             if (b8.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b8.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b8.background = getDrawable(R.mipmap.tank7_foreground)
@@ -336,6 +352,7 @@ class MainActivity : AppCompatActivity() {
         b9.setOnClickListener {
             if (b9.translationZ == emptyPlace) {
                 chPlayer()
+                soundMy()
                 b9.translationZ = xOr0
 
                 if (xOr0 == 2.0f) b9.background = getDrawable(R.mipmap.tank7_foreground)
